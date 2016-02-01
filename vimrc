@@ -2,6 +2,7 @@ syntax on
 colorscheme monokai
 
 execute pathogen#infect('bundle/{}')
+set encoding=utf-8
 
 
 "Nerd Tree
