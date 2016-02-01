@@ -1,5 +1,5 @@
 syntax on
-colorscheme monokai
+colorscheme wellsokai
 
 execute pathogen#infect('bundle/{}')
 set encoding=utf-8
