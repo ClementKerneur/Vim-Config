@@ -1,5 +1,10 @@
 syntax on
 colorscheme wellsokai
+set number
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set ts=2
 
 execute pathogen#infect('bundle/{}')
 set encoding=utf-8
