@@ -17,3 +17,15 @@ rm ~/.vimrc
 ```
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
+
+```
+cd ~/.vimrc
+```
+
+```
+git submodule init
+```
+
+```
+git submodule pull
+```
