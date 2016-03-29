@@ -1,7 +1,6 @@
 syntax on
 colorscheme wellsokai
 set number
-set expandtab
 set shiftwidth=2
 set softtabstop=2
 set ts=2
@@ -17,3 +16,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+set list
+let NERDTreeShowHidden=1
+
+:set autoread
+au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | endif
+
+set term=screen-256color
