@@ -24,3 +24,4 @@ let NERDTreeShowHidden=1
 au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | endif
 
 set term=screen-256color
+filetype plugin on

@@ -40,3 +40,9 @@
 [submodule "bundle/vim-autoread"]
 	path = bundle/vim-autoread
 	url = https://github.com/djoshea/vim-autoread.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
