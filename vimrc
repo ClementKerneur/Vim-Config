@@ -30,3 +30,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 vnoremap y myy`y
 vnoremap Y myY`y
+
+let mapleader = "\<Space>"
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader><Leader> :w<CR>
+
+nnoremap <CR> <C-}>
+nnoremap <BS> <C-{>
