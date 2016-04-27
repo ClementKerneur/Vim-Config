@@ -12,7 +12,7 @@ set encoding=utf-8
 "Nerd Tree
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -25,3 +25,8 @@ au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | en
 
 set term=screen-256color
 filetype plugin on
+
+let g:airline#extensions#tabline#enabled = 1
+
+vnoremap y myy`y
+vnoremap Y myY`y
