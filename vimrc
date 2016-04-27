@@ -34,6 +34,12 @@ vnoremap Y myY`y
 let mapleader = "\<Space>"
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader><Leader> :w<CR>
+nnoremap <Leader>q :q<CR>
 
 nnoremap <CR> <C-}>
 nnoremap <BS> <C-{>
+
+nmap <silent> <Up> :wincmd k<CR>
+nmap <silent> <Down> :wincmd j<CR>
+nmap <silent> <Left> :wincmd h<CR>
+nmap <silent> <Right> :wincmd l<CR>
