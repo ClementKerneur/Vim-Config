@@ -55,3 +55,6 @@
 [submodule "bundle/nerdtree-git-plugin"]
 	path = bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "bundle/vim-cursorword"]
+	path = bundle/vim-cursorword
+	url = https://github.com/itchyny/vim-cursorword.git
