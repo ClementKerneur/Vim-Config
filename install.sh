@@ -7,7 +7,16 @@ else
     curl http://j.mp/spf13-vim3 -L -o - | sh
 fi
 
-echo "source ~/.vim_clementker/.vimrc.local" >> ~/.vimrc.local 
-echo "source ~/.vim_clementker/.vimrc.bundles.local" >> ~/.vimrc.bundles.local
+if [[ -d ~/.spf13-vim-3 ]]; then
+    echo "Vim Clement Kerneur Layer is already installed !"
+else
+    echo "Install of Vim Clement Kerneur Layer !"
 
-vim +PluginInstall +qall!
+    git clone https://github.com/ClementKerneur/Vim-Config.git .vim_clementker
+
+    echo "source ~/.vim_clementker/.vimrc.local" >> ~/.vimrc.local 
+    echo "source ~/.vim_clementker/.vimrc.bundles.local" >> ~/.vimrc.bundles.local
+
+    vim +PluginInstall +qall!
+fi
+
