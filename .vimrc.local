@@ -1,0 +1,99 @@
+set clipboard=unnamed
+colors wellsokai
+set nospell
+set relativenumber
+
+map <Space>j ,,j
+map <Space>k ,,k
+
+nnoremap <Right> <C-w>l
+nnoremap <Left> <C-w>h
+nnoremap <Up> <C-w>k
+nnoremap <Down> <C-w>j
+
+let NERDTreeQuitOnOpen = 0
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:indent_guides_enable_on_vim_startup = 0
+
+set nobackup
+set nowb
+set noswapfile
+
+
+function ShortTabLine()
+    let ret = ''
+    for i in range(tabpagenr('$'))
+        " select the color group for highlighting active tab
+        if i + 1 == tabpagenr()
+            let ret .= ' %#errorMsg#'
+        else
+            let ret .= ' %#TabLine#'
+        endif
+        " find the buffername for the tablabel
+        let buflist = tabpagebuflist(i+1)
+        let winnr = tabpagewinnr(i+1)
+        let buffername = bufname(buflist[winnr - 1])
+        let filename = fnamemodify(buffername,':t')
+        " check if there is no name
+        if filename == ''
+            let filename = 'noname'
+        endif
+        " only show the first 6 letters of the name and
+        " .. if the filename is more than 8 letters long
+        "
+        let ret .= '['.(i+1).'] '
+
+        if strlen(filename) >=8
+            " let ret .= '['.filename[0:5].']'
+            let ret .= filename.' |'
+        else
+            let ret .= filename.' |'
+        endif
+    endfor
+    " after the last tab fill with TabLineFill and reset tab page #
+    let ret .= '%#TabLineFill#%T'
+    return ret
+endfunction
+
+
+set tabline=%!ShortTabLine()
+
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
+
+set autoread
+
+nmap <leader>w :w!<cr>
+
+map <space> /
+map <c-space> ?
+
+nnoremap <silent> J }
+nnoremap <silent> K {
+
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+inoremap <c-j> <Esc>:m .+1<CR>==gi
+inoremap <c-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <c-h> ^
+nnoremap <silent> <c-l> $
+
+nnoremap <tab> :tabnext<CR>
+nnoremap <S-tab> :tabprevious<CR>
+nnoremap <S-t> :tabnew<CR>
+nnoremap <S-q> :tabclose<CR>

@@ -1,0 +1,8 @@
+Plugin 'metakirby5/codi.vim'
+Plugin 'mtscout6/vim-cjsx'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tobyS/pdv'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'isRuslan/vim-es6'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'leafgarland/typescript-vim'
