@@ -7,7 +7,7 @@ else
     curl http://j.mp/spf13-vim3 -L -o - | sh
 fi
 
-if [[ -d ~/.spf13-vim-3 ]]; then
+if [[ -d ~/.vim_clementker ]]; then
     echo "Vim Clement Kerneur Layer is already installed !"
 else
     echo "Install of Vim Clement Kerneur Layer !"
