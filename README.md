@@ -2,8 +2,22 @@
 
 This config is override of [spf13-vim](https://github.com/spf13/spf13-vim#installation) project
 
-```
-git clone https://github.com/ClementKerneur/Vim-Config.git ~/.vim_clementker/ 
+``` bash
+git clone https://github.com/ClementKerneur/Vim-Config.git ~/.vim_clementker/
 ```
 
-Todo: Install next steps
+configure spf13 to add override :
+
+``` bash
+echo "source ~/.vim_clementker/.vimrc.local" >> ~/.vimrc.local 
+```
+
+``` bash
+echo "source ~/.vim_clementker/.vimrc.bundles.local" >> ~/.vimrc.bundles.local
+```
+
+install the plugins
+
+``` bash
+vim +PluginInstall +qall!
+```
