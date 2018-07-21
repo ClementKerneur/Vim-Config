@@ -1,31 +1,9 @@
 # Install
 
-to install this config of vim clone content of this repository on you ~/.vim folder
+This config is override of [spf13-vim](https://github.com/spf13/spf13-vim#installation) project
 
 ```
-rm -rf ~/.vim
+git clone https://github.com/ClementKerneur/Vim-Config.git ~/.vim_clementker/ 
 ```
 
-```
-git clone https://github.com/ClementKerneur/Vim-Config.git ~/.vim
-```
-
-```
-rm ~/.vimrc
-```
-
-```
-ln -s ~/.vim/vimrc ~/.vimrc
-```
-
-```
-cd ~/.vimrc
-```
-
-```
-git submodule init
-```
-
-```
-git submodule pull
-```
+Todo: Install next steps
