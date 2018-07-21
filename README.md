@@ -1,3 +1,7 @@
+# Auto Install
+
+sh <(curl https://raw.githubusercontent.com/ClementKerneur/Vim-Config/master/install.sh -L)
+
 # Install
 
 This config is override of [spf13-vim](https://github.com/spf13/spf13-vim#installation) project
