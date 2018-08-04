@@ -1,3 +1,6 @@
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 set clipboard=unnamed
 colors wellsokai
 set nospell
@@ -17,13 +20,21 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Open NERDTree in new tabs and windows if no command line args set
+autocmd VimEnter * NERDTree | wincmd w
+autocmd BufWinEnter * NERDTreeMirror
+
 let g:indent_guides_enable_on_vim_startup = 0
 
 set nobackup
 set nowb
 set noswapfile
 
+function RecursiveFind()
+    let ret = input('What search ? ')
+    vimgrep ret **/*.rb
+endfunction
 
 function ShortTabLine()
     let ret = ''
@@ -81,8 +92,8 @@ nmap <leader>w :w!<cr>
 map <space> /
 map <c-space> ?
 
-nnoremap <silent> J }
-nnoremap <silent> K {
+nnoremap <silent> J <c-d>
+nnoremap <silent> K <c-u>
 
 nnoremap <c-j> :m .+1<CR>==
 nnoremap <c-k> :m .-2<CR>==
@@ -93,7 +104,11 @@ vnoremap <c-k> :m '<-2<CR>gv=gv
 nnoremap <silent> <c-h> ^
 nnoremap <silent> <c-l> $
 
-nnoremap <tab> :tabnext<CR>
-nnoremap <S-tab> :tabprevious<CR>
-nnoremap <S-t> :tabnew<CR>
-nnoremap <S-q> :tabclose<CR>
+nnoremap <tab> :bn<CR>
+nnoremap <S-tab> :bp<CR>
+nnoremap <S-t> :enew<CR>
+nnoremap <S-q> :bw<CR>
+nnoremap <S-q> :bp<cr>:bd #<cr>
+
+
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
