@@ -1,10 +1,14 @@
+set timeoutlen=1000 ttimeoutlen=0
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+set norelativenumber
+set visualbell
 
 set clipboard=unnamed
 colors wellsokai
 set nospell
-set relativenumber
 
 map <Space>j ,,j
 map <Space>k ,,k
@@ -110,5 +114,7 @@ nnoremap <S-t> :enew<CR>
 nnoremap <S-q> :bw<CR>
 nnoremap <S-q> :bp<cr>:bd #<cr>
 
+autocmd BufNewFile,BufRead *.slim set ft=slim
 
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
